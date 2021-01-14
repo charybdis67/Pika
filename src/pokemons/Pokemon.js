@@ -8,3 +8,5 @@ export const Pokemon = ({ pokemon, onClick, buttonLabel }) => (
 );
 
 export default Pokemon;
+
+
