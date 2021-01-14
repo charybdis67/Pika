@@ -1,0 +1,16 @@
+.title {
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 4vw;
+  color: #0c1a5e;
+  font-family: "pokemon";
+}
+
+header {
+  width: 100%;
+}
+
+header a {
+  text-decoration: none;
+}
