@@ -1,0 +1,18 @@
+.PokemonDex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.Pokemon-win {
+  color: green;
+}
+.Pokemon-lose {
+  color: red;
+}
+
+.title-card {
+  text-align: center;
+  margin: 0 auto;
+}

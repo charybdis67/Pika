@@ -7,6 +7,7 @@ const url = "https://pokeapi.co/api/v2/pokemon";
 
 const PokemonList = () => {
   const { pokemons, capture, addPokemons } = useContext(PokemonContext);
+  
 
   useEffect(() => {
     const fetchPokemons = async () => {

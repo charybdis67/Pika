@@ -4,10 +4,12 @@ import { PokemonProvider } from './pokemons/PokemonContext';
 import PokemonsList from './pokemons/PokemonList';
 import Pokedex from './pokemons/Pokedex';
 import PokemonForm from './pokemons/pokemonForm';
+import PokemonGame from './pokemons/PokemonGame';
 
 const App = () => (
   <PokemonProvider>
     <div className="main">
+      <PokemonGame />
       <PokemonsList />
       <Pokedex />
     </div>
