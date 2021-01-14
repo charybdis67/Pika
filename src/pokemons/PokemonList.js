@@ -21,7 +21,6 @@ const PokemonList = () => {
   return (
     <div className="pokemons-list">
       <h2>Pokemons List</h2>
-
       <table>
         <tr>
           <th>Pokemon</th>

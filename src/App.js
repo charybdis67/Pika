@@ -3,16 +3,18 @@ import React from 'react';
 import { PokemonProvider } from './pokemons/PokemonContext';
 import PokemonsList from './pokemons/PokemonList';
 import Pokedex from './pokemons/Pokedex';
-import PokemonForm from './pokemons/pokemonForm';
+import './layout/Header.css';
 
 const App = () => (
   <PokemonProvider>
+    <header>
+				<h1 className='title'>
+		      Poke՛mon Cards
+		    </h1>
+    </header>
     <div className="main">
       <PokemonsList />
       <Pokedex />
-    </div>
-    <div className='form-wrapper'>
-      <PokemonForm />
     </div>
   </PokemonProvider>
 );
