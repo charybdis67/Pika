@@ -1,22 +1,78 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createMuiTheme, CssBaseline } from '@material-ui/core';
 
-import { PokemonProvider } from './pokemons/PokemonContext';
-import PokemonsList from './pokemons/PokemonList';
-import Pokedex from './pokemons/Pokedex';
-import './layout/Header.css';
+import PokemonList from './containers/pokemonList';
+import PokemonDetail from './containers/pokemonDetail';
+import MyPokemon from './containers/myPokemon';
+import NotFoundPage from './containers/notFoundPage';
+import { ThemeProvider } from 'styled-components';
 
-const App = () => (
-  <PokemonProvider>
-    <header>
-				<h1 className='title'>
-		      Poke՛mon Cards
-		    </h1>
-    </header>
-    <div className="main">
-      <PokemonsList />
-      <Pokedex />
-    </div>
-  </PokemonProvider>
-);
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+  typography: { useNextVariants: true },
+});
 
-export default App;
+class App extends Component {
+  renderPokemonList = props => {
+    return <PokemonList {...props} />;
+  };
+
+  renderPokemonDetail = props => {
+    return <PokemonDetail {...props} />;
+  };
+
+  renderMyPokemonList = props => {
+    return <MyPokemon {...props} />;
+  };
+
+  renderNotFoundPage = () => {
+    return <NotFoundPage />;
+  };
+
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline>
+          <Router>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => this.renderPokemonList(props)}
+              />
+              <Route
+                exact
+                path="/"
+                render={props => this.renderDarkMode(props)}
+              />
+              <Route
+                exact
+                path="/detail/:name"
+                render={props => this.renderPokemonDetail(props)}
+              />
+              <Route
+                exact
+                path="/my-pokemon"
+                render={props => this.renderMyPokemonList(props)}
+              />
+              <Route render={props => this.renderNotFoundPage()} />
+            </Switch>
+          </Router>
+        </CssBaseline>
+      </ThemeProvider>
+    );
+  }
+}
+
+export default connect(
+  state => {
+    return {};
+  },
+  dispatchEvent => {
+    return {};
+  }
+)(App);
